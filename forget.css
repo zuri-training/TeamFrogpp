@@ -1,0 +1,270 @@
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height:100vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    position:relative;
+    font-family: 'Baskervville', sans-serif;
+}
+
+/* nav bar */
+.nav-bar{
+    display:flex;
+    position:absolute;
+   justify-content:space-between;
+    width:100%;
+    height:50px;
+    top:0px;
+    background-color:#782c00;
+}
+/* logo section */
+.logo{
+    width:50%;
+    height:100%;
+    display:flex;
+}
+
+.logo p{
+    width:100%;
+    height:100%;
+    margin-top:10px;
+    color:white;
+    font-weight: bold;
+}
+
+/*nav bar link section */
+.nav-links {
+    width:50%;
+    height:100%; 
+    margin:10px; 
+}
+
+.nav-links ul {
+    display:flex;  
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+#Su{
+    background-color: white;
+    color: #782c00;
+    border-radius: 3px;
+    padding: 0px 5px;
+    font-weight: bold;
+}
+
+.nav-links ul li a, .side-bar a{
+    text-decoration: none;
+    width: 100%;
+    font-size: 16px;
+    color: white;
+}
+
+/* side bar section */
+
+.side-bar ul{
+    list-style-type: none;
+    background-color: #782c00;
+    position: absolute;
+    padding: 10px;
+    top: 60px;
+    right: 10px;
+    line-height: 40px;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.side-bar li:hover{
+    border-bottom:1px solid white;
+    cursor: pointer;
+    
+}
+.side-bar{
+    display: none;
+}
+
+#menu{
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    right:10px;
+}
+
+/* footer section */
+footer{
+    width:100%;
+    height:60px;
+    background-color: #E4D5CC;
+    bottom:0px;
+    padding: 0px 15px;
+    margin-top: 30px;
+}
+
+.footer ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    line-height: 15px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.footer ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.footer ul li a:hover{
+    cursor: pointer;
+}
+
+/* content section */
+h2{
+    margin:180px 0px 80px 0px;
+    text-align: center;
+}
+
+.content1{
+    width: 60%;
+    height:100vh;
+    margin:auto;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.content2{
+    background-color:#F4F4F4;
+    display: flex;
+    flex-direction: column;
+    box-shadow:1px 6px 5px rgba(0,0,0,0.4) ;
+    border-radius: 3px;
+    margin: auto;
+    padding: 0px 100px;
+}
+
+.text{
+    text-align: center;
+    margin:100px auto ;
+    height: 50%;
+    font-size: 14px;
+}
+/*Form section*/
+.form{
+    height: 50%;
+    margin-bottom: 100px;
+}
+label{font-size:16px;}
+
+input{
+    padding:20px 10px;
+    margin: 10px 0px;
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,0.4);
+    font-family: 'Baskervville', sans-serif ;  
+}
+
+#sub{
+    color: white;
+    border-style: none;
+    background-color: #782c00;
+    margin-top: 40px;
+    font-family: 'Baskervville', sans-serif ;  
+    font-size: 18px;
+}
+
+/*link for contact us section*/
+.info{
+    font-size: 14px;
+    color:rgba(0,0,0,0.7);
+    text-align: center;
+    margin-top: 30px;
+}
+
+.info a{
+    text-decoration: none;
+    color:black;
+    border-bottom: 2px solid;
+    font-weight: bold;
+}
+
+.info a:hover{
+    cursor: pointer;
+    color:#782c00 ;
+}
+
+@media(max-width:550px) {
+    .content2{padding: 30px;} 
+    #sub {font-size: 16px;}
+}
+
+@media(max-height:550px) {
+    .text{margin: 70px auto;}
+    
+    .form{margin-bottom:50px ;} 
+}
+
+@media(max-height:820px) {
+    .text{margin: 40px auto;}
+    
+    .form{margin-bottom:40px ;} 
+}
+
+@media(max-width:630px){
+    .nav-links{display: none;}
+    
+    #menu {
+        cursor: pointer;
+        width: 40px;
+        margin:5px 10px;
+            }
+    .content2{padding: 30px;} 
+    #sub {font-size: 16px;}
+}
+
+@media(min-width:631px){
+    .hide-sidebar{display: none;}
+
+    .content2{padding:0px 80px;} 
+    
+    .footer ul li a{font-size: 16px;}    
+    .logo p{
+        font-size: 25px;
+        margin-top: 2px;
+    }
+    .nav-links{width: 60%;
+    line-height: 15px;}
+    }
+
+@media(min-width:1000px){
+    .content2{padding:0px 100px;}     
+}
+
+@media(max-width:670px){
+    .nav-links ul li a{ margin-right: 5px;}
+    .nav-links ul li{font-size:14px;}
+    .nav-links{width:60%;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
