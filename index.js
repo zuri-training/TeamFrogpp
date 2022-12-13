@@ -40,13 +40,18 @@ var c;
 
 
 var d;
- function menuBar() {
+ function popup() {
      if (d==1){
-            document.getElementById("menuBar").style.display="none";
+            document.getElementById("download").style.display="none";
+document.getElementById("blur").style.filter="blur(0px)";
+            
    d=0;    
     }
    else {
-       document.getElementById("sidebar").style.display="block";
-       d=1;
+       document.getElementById("download").style.display="block";
+document.getElementById("blur").style.filter="blur(5px)";
+d=1;
   }
  }
+
+function myFunction(){ return false; }

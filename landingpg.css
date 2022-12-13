@@ -124,6 +124,7 @@ body{
     margin-top: 100px;
     padding: 150px 20px;
     box-shadow: 1px 3px 5px rgba(0,0,0,0.4);
+    position:relative;
 }
 .fstCont h2{font-size: 30px;}
 .fstCont p{
@@ -207,13 +208,18 @@ body{
 .jsoninfo, .csvinfo{
     background-color:#e4d5cc;
     width: 50%;
+    overflow: hidden;
+    padding-bottom: 20px;
 }
+
+.jsoninfo p, .csvinfo p {margin-bottom: 20px;}
+
 span h3{
     margin-top: 100px;
     margin-left: 5%;
 }
 
-#button{
+.button{
     border-style: none;
     margin-top: 30px;
     padding:10px 25px;
@@ -223,7 +229,19 @@ span h3{
     border-radius:3px ;
     text-decoration: none;
 }
-#button:hover{cursor: pointer;}
+.button:hover{cursor: pointer;}
+
+#button{
+    padding:5px;
+    background: #f4f4f4;
+    color:black;
+}
+
+
+
+
+
+
 
 
 
@@ -231,6 +249,9 @@ span h3{
     .hide-sidebar{display: none;}
     .nav-links{
         display: block;
+    }
+    #button{
+        padding: 5px 10px;
     }
   }
 @media(max-width:670px){
