@@ -24,7 +24,7 @@
   <div class="signin">
       
       <div class="left">
-          <img src="images/bg3.png" ></img>
+          <img src="{% static 'images/bg3.png' %}"></img>
       </div>
       
       <div class="right">
@@ -32,15 +32,17 @@
           <div class="content">
               <h2>Welcome back to our space!</h2>
               
-              <form action="{% url 'chunk_it:login' %}">
-                  
-                <label>Username</label><br>
-          <input type="text" placeholder="Johnson" required><br>
+              <form action="{% url 'chunk_it:login' %}" method='POST'>
+
+                {{ form.username.errors }}
+                <label>{{ form.username.label_tag }}</label><br>
+                {{ form.username }}<br>
           
           <div class="password">
-               <label>Password</label><br>
-          <input id="text" type="password" placeholder="Enter your password" required>  
-       <img src="images/eye-off.svg" id="pass" onclick="passIcon ()">  
+            {{ form.password.errors }} 
+               <label>{{ form.password.label_tag }}</label><br>
+               {{ form.password }}  
+       <img src="{% static 'images/eye-off.svg' %}" id="pass" onclick="passIcon ()">  
           </div>
           
           <div class="rem-me">
@@ -60,12 +62,12 @@
               </form>
              
              <div class="signupwith">
-           <a href=""><img src="images/google.svg"> Sign In With Google</a>
-           <a  href=""><img src="images/facebook.svg"> Sign In With Facebook</a>
+           <a href=""><img src="{% static 'images/google.svg' %}"> Sign In With Google</a>
+           <a  href=""><img src="{% static 'images/facebook.svg' %}"> Sign In With Facebook</a>
        </div> 
              
              <span id="alt">
-          <p>Don't have an account?  <a href="index.html">Sign up</a> </p>
+          <p>Don't have an account?  <a href="{% url 'chunk_it:signup' %}">Sign up</a> </p>
       </span>        
    
                            
@@ -75,7 +77,7 @@
       
       
   </div>
-  <script src="index.js"></script>
+  <script src="{% static 'js/index.js' %}"></script>
 </body>
 
 </html>

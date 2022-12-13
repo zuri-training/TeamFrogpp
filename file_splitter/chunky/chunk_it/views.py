@@ -18,12 +18,12 @@ from .forms import CustomUserCreationForm
 
 def landingpage(request):
     if request.method == 'GET':
-        return render('landingpg.html')
+        return render(request, 'chunk_it/landingpg.html')
  
 def signup(request):
  
     if request.user.is_authenticated:
-        return HttpResponseRedirect(reverse_lazy('chunk_it:landingpg'))
+        return HttpResponseRedirect(reverse_lazy('chunk_it:dashboard'))
      
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)  
@@ -34,7 +34,7 @@ def signup(request):
             # password = form.cleaned_data['password1']
             # user = authenticate(username = username,password = password)
             # login(request, user)
-            return HttpResponseRedirect(reverse_lazy('chunk_it:landingpg'))
+            return HttpResponseRedirect(reverse_lazy('chunk_it:dashboard'))
          
         else:
             return render(request,'chunk_it/signup.html',{'form':form})
@@ -46,7 +46,7 @@ def signup(request):
  
 def signin(request):
     if request.user.is_authenticated:
-        return redirect('/chunk_it')
+        return HttpResponseRedirect(reverse_lazy('chunk_it:dashboard'))
      
     if request.method == 'POST':
         username = request.POST['username']
@@ -55,7 +55,7 @@ def signin(request):
  
         if user is not None:
             login(request,user)
-            return redirect('/chunk')
+            return HttpResponseRedirect(reverse_lazy('chunk_it:dashboard'))
         else:
             form = AuthenticationForm()
             return render(request,'chunk_it/signin.html',{'form':form})
@@ -67,7 +67,7 @@ def signin(request):
  
 def signout(request):
     logout(request)
-    return redirect('/chunk_it/signin/')
+    return HttpResponseRedirect(reverse_lazy('chunk_it:login'))
 
 # User authentication End
 
@@ -113,9 +113,3 @@ def download(request):
         return render('download.html')
 
 
-
-class History(APIView):
-    def get(self, request):
-        histories = File_result.objects.all()
-        serializer = File_resultSerializer(histories, many=True)
-        return Response(serializer.data)

@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Landing Page</title>
-    <link rel="stylesheet" href="landingpg.css">
+    <link rel="stylesheet" href="{% static 'css/landingpg.css' %}">
     
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Baskervville&display=swap" rel="stylesheet"></head>
 <body>
@@ -11,7 +12,7 @@
     <div class="container">
         <div class="nav-bar">
             <div class="logo">
-            <img src="images/logo1.svg">
+            <img src="{% static 'images/logo1.svg' %}">
             <p>Chunk-It</p>
         </div>
               
@@ -23,15 +24,15 @@
                 <li> <a href="">About</a></li>
                 <li> <a href="">Services</a></li>
                 <li> <a href="">Contacts</a></li>
-                <li> <a id="Su" href="index.html">Sign Up</a></li>
-                <li> <a id="Si" href="signin.html">Login</a></li>
+                <li> <a id="Su" href="{% url 'chunk_it:signup' %}">Sign Up</a></li>
+                <li> <a id="Si" href="{% url 'chunk_it:login' %}">Login</a></li>
                 
             </ul>
         </div>
     </div>
 
 <div class="hide-sidebar">
-               <img id="menu" src="images/menu1.svg" onclick="sideBar ()">     
+               <img id="menu" src="{% static 'images/menu1.svg' %}" onclick="sideBar ()">     
 
         <div id="sidebar" class="side-bar">
             <ul>
@@ -39,8 +40,8 @@
                 <li> <a href="">About</a></li>
                 <li> <a href="">Services</a></li>
                 <li> <a href="">Contacts</a></li>
-                <li> <a href="index.html">Sign Up</a></li>
-                <li> <a href="signin.html">Login</a></li>
+                <li> <a href="{% url 'chunk_it:signup' %}">Sign Up</a></li>
+                <li> <a href="{% url 'chunk_it:login' %}">Login</a></li>
         </div>
 </div>
 
@@ -48,7 +49,7 @@
         <div class="fstCont">
             <h2>Convienient Technique to Chunk your large Files</h2>
             <p>All the tools you need to split your Dataset to Chunks</p>
-           <a href="index.html" id="button">Get Started</a>
+           <a href="{% url 'chunk_it:chunk' %}" id="button">Get Started</a> 
         </div>
         
      <div class="sndCont">
@@ -60,28 +61,28 @@
 
 <div class="file">
     <div class="file1">
-        <img src="images/csv1.svg" alt="csv icon">
+        <img src="{% static 'images/csv1.svg' %}" alt="csv icon">
         <p>Chunk CSV</p>
     </div>
     
     <div class="file1">
-        <img src="images/json1.svg" alt="json icon">
+        <img src="{% static 'images/json1.svg' %}" alt="json icon">
         <p>Chunk JSON</p>
     </div>
     
     <div class="file1">
-        <img src="images/csv1.svg" alt="csv icon">
+        <img src="{% static 'images/csv1.svg' %}" alt="csv icon">
         <p>Chunk CSV</p>
     </div>
     
     <div class="file1">
-        <img src="images/json1.svg" alt="json icon">
+        <img src="{% static 'images/json1.svg' %}" alt="json icon">
         <p>Chunk JSON</p>
     </div>
 </div>
        
        <div class="img">
-           <img src="images/image2.jpg" alt="words">
+           <img src="{% static 'images/image2.jpg' %}" alt="words">
        </div> 
         
        <span><h3>About Data Format</h3></span>
@@ -89,17 +90,17 @@
             <div class="csvinfo">
                 <h4>CSV</h4>
                 <p>CSV or Comma Seperated Values is widely used for tabular data and often associated to spreadsheet applications like Excel. Many data reporting tools output to CSV format</p>
-       <button>Learn More</button>
+       <button id="button">Learn More</button>
             </div>
             
             <div class="jsoninfo">
                 <h4>JSON</h4>
                 <p>JSON stands for JavaScript Object Notation and has become the defacto computer format readable by humans to store structured data. From API's to configuration files, JSON is now everywhere</p>
-       <button>Learn More</button>
+       <button  id="button">Learn More</button>
             </div>  
         </div>
     <div class="img">
-        <img src="images/image1.jpeg" alt="words">
+        <img src="{% static 'images/image1.jpeg' %}" alt="words">
     </div>    
         
         
@@ -107,6 +108,6 @@
     
     
     
-    <script src="index.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
 </body>
 </html>

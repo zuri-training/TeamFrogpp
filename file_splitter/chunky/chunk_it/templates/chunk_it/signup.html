@@ -10,7 +10,7 @@
 <body>
     <div class="signup">
     <div class="left">
-     <img src="images/bg1.png">  
+     <img src="{% static 'images/bg1.png' %}">  
            </div>
     
     <div class="right">
@@ -33,13 +33,13 @@
      <div class="password">
         {{ form.password1.errors }} 
         <label>{{ form.password1.label_tag }}</label><br>
-        {{ form.password1 }}<img src="images/eye-off.svg" id="pass" onclick="passIcon ()">  
+        {{ form.password1 }}<img src="{% static 'images/eye-off.svg' %}" id="pass" onclick="passIcon ()">  
 </div>
           
        <div class="password1">
         {{ form.password.errors }} 
         <label>{{ form.password2.label_tag }}</label><br>
-        {{ form.password2 }}<img src="images/eye-off.svg" id="pass1" onclick="passIcon1 ()">  
+        {{ form.password2 }}<img src="{% static 'images/eye-off.svg' %}" id="pass1" onclick="passIcon1 ()">  
 </div>
            
           
@@ -55,8 +55,8 @@
       </div>
       
         <div class="signupwith">
-           <a href=""><img id="g-icon" src="images/google.svg"> Sign Up With Google</a>
-           <a id="M" href=""><img src="images/facebook.svg"> Sign Up With Facebook</a>
+           <a href=""><img id="g-icon" src="{% static 'images/google.svg' %}"> Sign Up With Google</a>
+           <a id="M" href=""><img src="{% static 'images/facebook.svg' %}"> Sign Up With Facebook</a>
        </div>
 
      

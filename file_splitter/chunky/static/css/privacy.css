@@ -1,0 +1,166 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+      width: 100%;
+      height: 100vh;
+      font-size: 16px;
+      font-family: 'Baskervville',sans-serif;
+      position: relative;
+  }
+  
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    margin: auto;
+  }
+  /*Navigation Bar*/
+  .nav-bar {
+      padding: 50px 0px;
+      width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  } 
+  
+.logo{
+    display: flex;
+    }
+.logo h2{background: -webkit-linear-gradient(#782c00 40%,#FAF7F6);
+ -webkit-background-clip: text;     -webkit-text-fill-color: transparent;
+ margin-left: 47px;
+}
+.logo img{
+    width:55px;
+    position: absolute;
+}
+  /* navigation links */
+  .nav-links {
+    width:70%;
+    height:100%; 
+    margin:10px; 
+    font-weight: bold;
+}
+
+#signup{
+    color: white;
+    background-color: #782c00;
+    width:50px;
+}
+
+#login, #signup{
+    border-radius: 3px;
+    padding: 5px 15px;
+}
+
+#login{
+    border:2px solid #782c00;
+    color :black;
+}
+
+.nav-links ul {
+    display:flex;  
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.nav-links ul li a, .side-bar a{
+    text-decoration: none;
+    width: 100%;
+    font-size: 16px;
+    color: black;
+}
+.nav-links ul li a {
+    margin-left: 10px;
+}
+
+/* side bar section */
+
+.side-bar ul{
+    list-style-type: none;
+    background-color: white;
+    position: absolute;
+    padding: 10px;
+    top: 120px;
+    right: 10px;
+    line-height: 40px;
+    border-radius: 4px;
+}
+
+.side-bar li:hover{
+    border-bottom:1px solid white;
+    cursor: pointer;
+    
+}
+.side-bar{
+    display: none;
+    font-weight: bold;
+}
+
+#menu{
+    position: absolute;
+    z-index: 1;
+    top: 50px;
+    right:10px;
+    color: red;
+}
+
+  
+  /* Content part of the privacy page */
+  main {
+    width: 90%;
+    padding: 0px 0px;
+}
+  
+ .content h2{
+     padding: 40px 0px;
+ } 
+ 
+ p,ul {margin-bottom: 40px;}
+ 
+ ul{
+     margin-left: 35px;
+ }
+ 
+ h3 {margin-bottom: 25px;}
+
+@media(max-width:659px){
+    .nav-links{display: none;}
+    
+    #menu {
+        cursor: pointer;
+        width: 40px;
+        margin:5px 10px;
+            }
+   .logo img{
+       margin-top: 0px;
+   }            
+
+}
+
+@media(min-width:660px){
+    .hide-sidebar{display: none;}
+  }
+@media(max-width:670px){
+    .nav-links ul li a{ margin-right: 5px;}
+    .nav-links ul li{font-size:12px;}
+    .nav-links{width:70%;}
+}
+
+@media(max-width:800px){
+    .nav-links{
+        width: 70%;
+      }
+    .nav-links ul li a{
+        margin-left: 10px;
+    }
+    #signup{
+        padding: 2px;
+       }
+}

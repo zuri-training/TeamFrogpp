@@ -1,28 +1,28 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Chunk Page</title>
-    <link rel="stylesheet" href="dashboard1.css">
+    <link rel="stylesheet" href="{% static 'css/chunkpg.css' %}">
     
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Baskervville&display=swap" rel="stylesheet"></head>
 <body>
     <div class="container">
         <div class="left">
             <div class="logo">
-            <img id="logo" src="images/logo.svg">
+            <img id="logo" src="{% static 'images/logo.svg' %}">
             <p>Chunk-It</p>
         </div>
               
               
    <div class="nav-links">
         <ul>
-                <li><img class="icon" src="images/home.svg" alt=""> <a href="">Home</a></li>
-                <li><img id="icon" class="icon" src="images/file.svg" alt=""> <a href="">Chunk File</a></li>
-                <li><img class="icon" src="images/globe.svg" alt=""> <a href="">History</a></li>
-                <li><img class="icon" src="images/download.svg" alt=""><a href="">Download</a></li>
-                <li><img class="icon" src="images/call.svg" alt=""> <a href="contactus.html">Contact Us</a></li>
+                <li><img class="icon" src="{% static 'images/home.svg' %}" alt=""> <a href="">Home</a></li>
+                <li><img id="icon" class="icon" src="{% static 'images/file.svg' %}" alt=""> <a href="">Chunk File</a></li>
+                <li><img class="icon" src="{% static 'images/globe.svg' %}" alt=""> <a href="">History</a></li>
+                <li><img class="icon" src="{% static 'images/download.svg' %}" alt=""><a href="">Download</a></li>
+                <li><img class="icon" src="{% static 'images/call.svg' %}" alt=""> <a href="contactus.html">Contact Us</a></li>
                                 
             </ul>
         </div>
@@ -31,14 +31,15 @@
         
         <div class="right">
             <div class="logout">
-            <a href="signin.html">Log out</a>
+            <a href="{% url 'chunk_it:login' %}">Log out</a>
             </div>
-            
+
+       <div id="blur">                 
             
             <div class="content">
                 
                 <div class="input_file">
-         <form method="POST">
+         <form onsubmit="return myFunction();" action="{% url 'chunk_it:chunk' %}" method="POST">
                <p>Drag and Drop a File</p>
                         <span>OR</span>
                         <!-- <button>Upload File</button> -->
@@ -48,14 +49,14 @@
           </div>
 
           <div class="input_file1">
-                 <p class="info">File must not exceed 5000MB</p>
+                 <p class="info">File must not exceed 1000MB</p>
                 
-                <form action="dashboarddwnld.html" method="GET">
+                <form onsubmit="return myFunction();" action="{% url 'chunk_it:chunk' %}"  method="POST">
                     <label class="sizes">Select sizes of chunks</label>
                     <input type="number" id="sizes" name="sizes" min="1" placeholder="Size" /><br>
-            <div class="append">     <input type="radio" name="format" value="Bytes"/><label for="Bytes">Bytes</label><br>
+            <div class="append">     
                     
-        <input type="radio" name="format" value="KB"/><label for="KB">KB</label><br>
+        <input type="radio" name="format" value="KB" checked/><label for="KB">KB</label><br>
         <input type="radio" name="format" value="MB"/><label for="MB">MB</label><br>
            <input type="radio" name="format" value="GB"/><label for="GB">GB</label><br></div>
                 
@@ -67,21 +68,47 @@
                         <option value="CSV">CSV</option>
                     </select>
               </div>  
-  <input type="submit" value="Chunk File">
+  <a class="submit" onclick="popup()">Chunk File</a>
                 
             </form>
 
             </div>
             
            
-           <div class="footer">
+         <div class="footer">
                
            </div> 
             
-        </div>                
+        </div>   
+        
+        
+        
+        
+      </div>   
+      
+          <div class="downloadpg" id="download">
+        <p id="p" >Here are your chunked files</p>
+        <div class="fileimg">
+          <img src="images/folder.svg" alt="">  
+        </div>
+        
+        <div class="links">
+            <p>Files not downloaded are automatically deleted after 24hours</p>
+            <a href="">Download</a><br>
+            <a href="">Save</a>
+        </div>
+         </div>
+        
     </div>
-
+    
         
     
+    
+    
+    
+    
+  <script src="{% static 'js/index.js' %}"></script>  
 </body>
 </html>
+
+

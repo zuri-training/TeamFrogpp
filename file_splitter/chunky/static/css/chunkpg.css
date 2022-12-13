@@ -1,0 +1,323 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    font-size: 18px;
+    font-family: 'Baskervville',sans-serif;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+
+.left{
+    background:#782c00;
+    width: 45%;
+    overflow:hidden ;
+    display: flex;
+    flex-direction: column;
+}
+
+.right{
+    width: 55%;
+    overflow-x: hidden; 
+    position: relative;
+}
+
+#blur{filter:blur(0px);}
+
+/* logo section */
+.logo{
+    width:100%;
+    height:100%;
+    display:flex;
+    margin-right: 0px;
+}
+
+#logo{
+    width: 50px;
+    position: absolute;
+    top:10px;
+    left:0px;
+}
+
+.logo p{
+    width:100%;
+    height:100%;
+    color: white;
+    margin-top:10px;
+    margin-left: 45px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 0px;
+}
+
+/*nav bar link section */
+.nav-links ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-links {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 100px;
+    overflow-y: hidden;
+   }
+
+.nav-links ul li{
+    margin-bottom: 50px;
+}
+
+.nav-links ul{
+    list-style: none;      
+}
+
+.icon{
+    width: 20px;
+}
+
+#icon{
+    width: 25px;
+    border-left: 2px solid white;
+    padding-left: 5px;
+}
+/*Log out button*/
+/* .logout{
+    } */
+.logout a{
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    border-radius: 4px;
+    background: #782c00;
+    padding: 5px 20px;
+    font-size: 16px;
+
+}
+
+/*the main part of the download pg*/
+.input_file{
+    margin: auto;
+    width:60%;
+    text-align: center;
+    background: #E4D5CC;
+    padding:2em;
+    border-radius: 5px;
+}
+#label{
+    margin: auto;
+    width: 70%;
+    color: #782c00;
+    font-weight: bold;
+}
+
+#cfile{
+    margin: auto;
+    margin-top: 30px;
+    width: 90%;
+    background-color: #782c00;
+    border-radius: 3px;
+}
+.button{
+    width: 50%;
+    margin: auto;
+    padding: 10px 0px;
+    font-family: 'Baskervville',sans-serif;
+    color: white;
+}
+
+.content{
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+background-color:rgba(0,0,0,0.1);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 4px;
+}
+
+.input_file p{
+        display:block;
+        font-weight: bold;
+        color: #782c00;
+    }
+.input_file span{
+        display: block;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+/*second section for inputing files*/
+.input_file1 {
+    margin-left: 20%;
+}
+.input_file1 p{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+#sizes{
+    width: 50%;
+    padding: 5px 10px;
+}
+
+#info{
+    margin-bottom: 20px;
+}
+
+.outputFormat select{
+    padding: 10px 5px;
+    width: 50%;
+    border-style: none;
+    font-family: 'Baskervville',sans-serif;
+    box-shadow:0px 0px 5px rgba(0,0,0,0.4);
+    outline: none;
+}
+.outputFormat {
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+/*the options which have a radio checkbox beside them*/
+.append{
+    margin-top: 30px;
+    line-height: 35px;
+}
+/*radio checkbox design*/
+input[type='radio']:after{ 
+    width: 15px; 
+    height: 15px; 
+    border-radius: 15px; 
+    top: -0.7px; 
+    left: -0.7px;
+    position: relative;        
+    /* background-color: #d4257;      */
+    content: '';
+    display: inline-block;    
+    visibility: visible;    
+} 
+
+input[type='radio']:checked:after { 
+    width: 15px; 
+    height: 15px; 
+    border-radius: 15px; 
+    top: -0.1px; 
+    left: -0.1px;
+    position: relative;                    
+    background-color: #782c00; 
+    content: ''; 
+    display: inline-block;     
+    visibility: visible; 
+}
+/*submit button*/
+.submit{
+    text-decoration: none;
+    background: #782c00;
+    width: 100%;
+    color: white;
+    font-family: 'Baskervville',sans-serif;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px 40px;
+    border-radius: 4px;
+}
+
+
+
+
+/*download page pop-up*/
+.downloadpg{
+    position: absolute;
+    height: 50%;
+    top: 30%;
+    background-color: white;
+    left: 20%;
+    right: 20%;
+    bottom: 30%;
+    border-radius: 5px;
+    display: none;
+}
+.downloadpg p{
+    margin: 20px;
+}
+.fileimg{
+    background-color: #E4D5CC;
+    display: flex;
+    width: 80%;
+    margin: auto;
+    padding: 30px 60px;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.fileimg img{
+    width: 50%;
+}
+.links p{
+    margin-top: 50px;
+}
+.links{
+    margin-left: 10%;
+    margin-right: 5%;
+}
+
+.links a{
+    text-align: center;
+    background: #782c00;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    color: white;
+    line-height: 50px;
+    width: 80%;
+    margin: auto;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+@media(min-width:820px){
+    .left{
+        width:15%;
+    }
+    .right{
+        width: 85%;
+    }
+    .nav-links{
+        margin-left:5%;
+    }
+}
+
+@media(min-width:660px){
+    .left{
+        width:30%;
+    }
+    .right{
+        width: 70%;
+    }
+    .nav-links{
+        margin-left:5%;
+      }
+}
+
+@media(max-width:659px){
+    .submit{
+        padding: 5px;
+        margin-left: 0px;
+    }
+}
