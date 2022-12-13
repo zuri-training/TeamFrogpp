@@ -1,7 +1,9 @@
 from django.db import models
 from django.conf import settings
-from .validators import validate_file_size, validate_extension
+from .validators import validate_file_size, validate_extension, compare_size
 from django.contrib.auth.models import User
+import math
+import os
 
 # from upload_validator import FileTypeValidator
 
@@ -21,21 +23,45 @@ class Chunk_file(models.Model):
 #     allowed_extensions=['.csv', '.json']
 # )
 
-    file = models.FileField(upload_to='uploaded_files/', validators=[validate_file_size, validate_extension])
+    def convert_bytes(filenum, filesize):
+        if filenum == 0:
+            return "0"
+        elif filesize == "B":
+            return filenum
+        elif filesize == "KB":
+            return filenum * 1024
+        elif filesize == "MB":
+            return filenum * math.pow(1024, 2)
+        elif filesize == "GB":
+            return filenum * math.pow(1024, 3)
+
+    
+
     size_num = models.FloatField(null=True)
 
-    BYTES = 'B'
     KILOBYTES = 'KB'
     MEGABYTES = 'MB'
     GIGABYTES = 'GB'
 
     BYTES_CHOICES = [
-        (BYTES, 'B'),
         (KILOBYTES, 'KB'),
         (MEGABYTES, 'MB'),
         (GIGABYTES, 'GB'),
     ]
-    size_string = models.CharField(max_length=10, choices=BYTES_CHOICES, default=BYTES)
+    size_string = models.CharField(max_length=10, choices=BYTES_CHOICES, default=KILOBYTES)
+
+
+    file = models.FileField(upload_to='uploaded_files/', validators=[validate_file_size, validate_extension])
+
+    # compare_size(totalfilesize, convert_bytes(size_num, size_string))
+
+    
+        
+    # Check if the user defined size is higher than the total file size
+    # Check if the total file split exceeds 50 
+
+
+    
 
     JSON = ".json"
     CSV = ".csv"

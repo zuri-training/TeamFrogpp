@@ -6,9 +6,9 @@ app_name = "chunk_it"
 urlpatterns = [
     # User authentication urls
     path('', landingpage, name='landingpg'),
-    path('chunk_it/signup/', signup, name ='signup'),
-    path('chunk_it/signin/', signin, name = 'login'),
-    path('chunk_it/signout/', signout, name = 'logout'),
+    path('signup/', signup, name ='signup'),
+    path('signin/', signin, name = 'login'),
+    path('signout/', signout, name = 'logout'),
 
     path('chunkfile/', ChunkFile.as_view(),name='chunk'),
     path('history/', History.as_view()),

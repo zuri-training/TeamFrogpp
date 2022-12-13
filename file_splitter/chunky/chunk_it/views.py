@@ -1,19 +1,20 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from rest_framework.views import APIView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .serializers import Chunk_fileSerializer, File_resultSerializer
 # from rest_framework import status
 from rest_framework.response import Response
 from .test_split import fileSplitter
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 import zipfile
 from .forms import ChunkFileForm
 from .models import File_result, Chunk_file
 
 # User authentication 
-from django.shortcuts import render,redirect
+from django.urls import reverse_lazy
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.forms import AuthenticationForm,UserCreationForm
+from .forms import CustomUserCreationForm
 
 def landingpage(request):
     if request.method == 'GET':
@@ -22,24 +23,24 @@ def landingpage(request):
 def signup(request):
  
     if request.user.is_authenticated:
-        return redirect('/chunk')
+        return HttpResponseRedirect(reverse_lazy('chunk_it:landingpg'))
      
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)  
  
         if form.is_valid():
             form.save()
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password1']
-            user = authenticate(username = username,password = password)
-            login(request, user)
-            return redirect('/chunk')
+            # username = form.cleaned_data['username']
+            # password = form.cleaned_data['password1']
+            # user = authenticate(username = username,password = password)
+            # login(request, user)
+            return HttpResponseRedirect(reverse_lazy('chunk_it:landingpg'))
          
         else:
             return render(request,'chunk_it/signup.html',{'form':form})
      
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm()
         return render(request,'chunk_it/signup.html',{'form':form})
  
  

@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Chunk-It Sign-Up</title>
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
     
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Baskervville&display=swap" rel="stylesheet"></head>
 <body>
@@ -19,19 +20,26 @@
                     
       <div class="form">
           
-          <form action="signin.html" >
-              <label>Full Name</label><br>
-          <input type="text" placeholder="Mercy Johnson" required><br>
+          <form action="{% url 'chunk_it:signup' %}" method='POST' >
+            {% csrf_token %}
+            {{ form.username.errors }}
+              <label>{{ form.username.label_tag }}</label><br>
+          {{ form.username }}<br>
           
-          <label>Email Address</label><br>
-          <input type="email" placeholder="Enter your email address" required><br>
+          {{ form.email.errors }}
+          <label>{{ form.email.label_tag }}</label><br>
+          {{ form.email }}<br>
           
-     <div class="password">     <label>Password</label><br>
-          <input id="text" type="password" placeholder="Enter your password" required><img src="images/eye-off.svg" id="pass" onclick="passIcon ()">  
+     <div class="password">
+        {{ form.password1.errors }} 
+        <label>{{ form.password1.label_tag }}</label><br>
+        {{ form.password1 }}<img src="images/eye-off.svg" id="pass" onclick="passIcon ()">  
 </div>
           
-       <div class="password1">   <label>Retype Password</label><br>
-          <input id="text1" type="password" placeholder="Enter your password" required><img src="images/eye-off.svg" id="pass1" onclick="passIcon1 ()">  
+       <div class="password1">
+        {{ form.password.errors }} 
+        <label>{{ form.password2.label_tag }}</label><br>
+        {{ form.password2 }}<img src="images/eye-off.svg" id="pass1" onclick="passIcon1 ()">  
 </div>
            
           
@@ -39,7 +47,7 @@
           </form>
                     
       <span id="alt">
-          <p>Already have an account?  <a href="signin.html">Login</a></p>
+          <p>Already have an account?  <a href="{% url 'chunk_it:login' %}">Login</a></p>
       </span>        
    
       <div class="or" >
@@ -62,7 +70,7 @@
     
     </div>
     
-    <script src="index.js">
+    <script src="{% static 'js/index.js' %}">
          
     </script>
 </body>

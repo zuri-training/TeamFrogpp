@@ -19,6 +19,16 @@ def validate_file_size(value):
     else:
         return value
 
+
+def compare_size( totalfilesize, userdefinedsize):
+        
+    if userdefinedsize > totalfilesize:
+        raise ValidationError("Total filesize cannot be lower that User defined size")
+
+    elif (totalfilesize / userdefinedsize) > 50:
+        raise ValidationError("Cannot exceed 50 filesplit")
+
+
 def validate_extension(file):
     # valid_mime_types = ['application/json','application/csv']
     # file_mime_type = magic.from_buffer(file.read(1024), mime=True)

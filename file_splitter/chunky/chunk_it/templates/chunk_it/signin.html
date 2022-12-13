@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
 <html>
 
 <head>
-    <link href="signin.css" rel="stylesheet"/>
+    <link href="{% static 'css/signin.css' %}" rel="stylesheet"/>
     
     <title>Login</title>
     
@@ -31,10 +32,10 @@
           <div class="content">
               <h2>Welcome back to our space!</h2>
               
-              <form action="">
+              <form action="{% url 'chunk_it:login' %}">
                   
-                <label>Email Address</label><br>
-          <input type="email" placeholder="mercyjohnson@yahoo.com" required><br>
+                <label>Username</label><br>
+          <input type="text" placeholder="Johnson" required><br>
           
           <div class="password">
                <label>Password</label><br>

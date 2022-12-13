@@ -56,9 +56,8 @@ def fileSplitter(ID):
             df = pd.read_csv (filepath)  
             df.to_json (filepath)
             filename = os.path.splitext(filepath)[0] + '.json'
-
     # Split the data using size specified and save it to the media directory
-    split= Split(filepath, "media/fileSplit/")
+    split= Split(filepath, "chunk_it/fileSplit/")
 
 
     hsd = math.ceil(convert_bytes(filenum, filesize))
