@@ -59,7 +59,8 @@ body{
 }
 
 #Su{
-    background-color:#782c00;
+/*     background-color:#782c00; */
+    border:2px solid #782c00;
     color: white;
     border-radius: 3px;
     padding: 8px 10px;
@@ -72,6 +73,12 @@ body{
     padding: 8px 10px;
     font-weight: bold;
 }
+#Su, #Si:hover{
+    cursor: pointer;
+    background-color: #b64c0e;
+    color: #fff;
+}
+    
 
 .nav-links ul li a, .side-bar a{
     text-decoration: none;
@@ -131,6 +138,7 @@ body{
 .fstCont h2{font-size: 30px;}
 .fstCont p{
     margin: 20px auto;
+    margin-bottom: 15px;
 }
 .fstCont button{
     padding: 10px 25px;
@@ -234,7 +242,7 @@ span h3{
 }
 .button:hover{
     cursor: pointer;
-    background-color: #e25e11;
+    background-color: #b64c0e;
     color: #fff;
 }
 
