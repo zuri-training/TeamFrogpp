@@ -9,7 +9,7 @@ body{
     height:100vh;
     font-family: 'Baskervville',sans-serif;
     font-size:18px;
-    
+    position: relative;
 }
 
 .container {
@@ -17,7 +17,7 @@ body{
     height: 100vh;
      margin-top; 40px;
     overflow-x: hidden;
-    position: relative;
+    
 }
 
 /* nav bar */
