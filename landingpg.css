@@ -213,7 +213,7 @@ body{
 .jsoninfo, .csvinfo{
     background-color:#e4d5cc;
     width: 50%;
-    padding: 40px;
+    padding: 50px;
     overflow: hidden;
     padding-bottom: 20px;
 }
@@ -222,8 +222,10 @@ body{
 
 span h3{
     margin-top: 100px;
+    margin-left: 3%;
+}
+span > h4{
     padding-bottom: 30px;
-/*     margin-left: 5%; */
 }
 
 .button{
@@ -244,7 +246,7 @@ span h3{
 
 #button{
     padding: 16px;
-    margin-left: 16px;
+    margin-left: 10px;
     background-color: #f4f4f4;
     border: 1px solid #ddd0d0;
     border-radius: 8px ;
