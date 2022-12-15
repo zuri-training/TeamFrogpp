@@ -222,7 +222,7 @@ body{
 
 span h3{
     margin-top: 100px;
-    margin-left: 3%;
+    margin-left: 5%;
 }
 span > h4{
     margin-bottom: 30px;
@@ -252,6 +252,10 @@ span > h4{
     border: 1px solid #ddd0d0;
     border-radius: 8px ;
     color: black;
+}
+."footer1"{
+display: flex;
+ justify-content: space-between;   
 }
 
 
