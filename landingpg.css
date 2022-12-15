@@ -243,8 +243,10 @@ span h3{
 
 #button{
     padding: 16px;
+    margin-left: 16px;
     background-color: #f4f4f4;
-     border-radius:3px ;
+    border: 1px solid #ddd0d0;
+    border-radius:3px ;
     color:black;
 }
 
