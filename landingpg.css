@@ -254,7 +254,7 @@ span > h4{
     border-radius: 8px ;
     color: black;
 }
-."footer1"{
+.footer1{
 display: flex;
  justify-content: space-between;   
 }
