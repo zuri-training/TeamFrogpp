@@ -60,7 +60,7 @@ body{
     background-color:#782c00;
     color: white;
     border-radius: 3px;
-    padding: 10px;
+    padding: 16px;
     font-weight: bold;
 }
 
@@ -232,7 +232,8 @@ span h3{
 }
 .button:hover{
     cursor: pointer;
-    color: #b44c10
+    background-color: #e25e11;
+    color: #fff;
 }
 
 #button{
