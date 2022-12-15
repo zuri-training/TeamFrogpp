@@ -63,17 +63,22 @@ body{
     border:2px solid #782c00;
     color: white;
     border-radius: 3px;
-    padding: 8px 10px;
+    padding: 5px 8px;
     font-weight: bold;
 }
 
 #Si{
     border-radius: 3px;
     border:2px solid #782c00;
-    padding: 8px 10px;
+    padding: 5px 8px;
     font-weight: bold;
 }
-#Su, #Si:hover{
+#Si:hover{
+    cursor: pointer;
+    background-color: #b64c0e;
+    color: #fff;
+}
+#Su:hover{
     cursor: pointer;
     background-color: #b64c0e;
     color: #fff;
@@ -153,6 +158,7 @@ body{
 .sndCont{
     width: 70%;
     margin: auto;
+    margin-bottom: 40px;
     text-align: center;
 }
 .sndCont p{
@@ -163,6 +169,7 @@ body{
     background-color: #a1a1a1;
 }
 .sndCont h3{
+    font-size: 20px;
     margin: 50px auto;
 }
 /*file icons for Json and Csv*/
