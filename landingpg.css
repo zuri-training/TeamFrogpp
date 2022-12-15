@@ -26,6 +26,7 @@ body{
     height:50px;
     position: relative;
     top:0px;
+    margin-top; 20px;
     margin-bottom: 100px;
 }
 /* logo section */
@@ -67,7 +68,7 @@ body{
 #Si{
     border-radius: 3px;
     border:2px solid #782c00;
-    padding: 10px;
+    padding:10px 18px;
     font-weight: bold;
 }
 
