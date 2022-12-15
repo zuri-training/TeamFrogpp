@@ -77,11 +77,13 @@ body{
     cursor: pointer;
     background-color: #b64c0e;
     color: #fff;
+    border: none;
 }
 #Su:hover{
     cursor: pointer;
     background-color: #b64c0e;
     color: #fff;
+    border: none;
 }
     
 
