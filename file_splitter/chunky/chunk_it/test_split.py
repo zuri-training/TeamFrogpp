@@ -9,7 +9,6 @@ from django.core.files import File
 from pathlib import Path
 
 
-
 def fileSplitter(ID):
     filedata = Chunk_file.objects.get(pk=ID)
 

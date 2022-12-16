@@ -3,19 +3,41 @@ from django.conf import settings
 from .validators import validate_file_size, validate_extension, compare_size
 from django.contrib.auth.models import User
 import math
-import os
 
 # from upload_validator import FileTypeValidator
 
 
 # Create your models here.
 
+def convert_bytes(filenum, filesize):
+    if filenum == 0:
+        return "0"
+    elif filesize == "B":
+        return filenum
+    elif filesize == "KB":
+        return filenum * 1024
+    elif filesize == "MB":
+        return filenum * math.pow(1024, 2)
+    elif filesize == "GB":
+        return filenum * math.pow(1024, 3)
+
+
 class File_result(models.Model):
     name = models.CharField(max_length=300, default='newFile')
     file = models.FileField(upload_to='files/')
-    # user =  models.ForeignKey(User, on_delete=models.CASCADE)
+    user =  models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
+
+KILOBYTES = 'KB'
+MEGABYTES = 'MB'
+GIGABYTES = 'GB'
+
+BYTES_CHOICES = [
+    (KILOBYTES, 'KB'),
+    (MEGABYTES, 'MB'),
+    (GIGABYTES, 'GB'),
+]
 class Chunk_file(models.Model):
                             
 #     validator = FileTypeValidator(
@@ -23,31 +45,12 @@ class Chunk_file(models.Model):
 #     allowed_extensions=['.csv', '.json']
 # )
 
-    def convert_bytes(filenum, filesize):
-        if filenum == 0:
-            return "0"
-        elif filesize == "B":
-            return filenum
-        elif filesize == "KB":
-            return filenum * 1024
-        elif filesize == "MB":
-            return filenum * math.pow(1024, 2)
-        elif filesize == "GB":
-            return filenum * math.pow(1024, 3)
 
     
 
     size_num = models.FloatField(null=True)
 
-    KILOBYTES = 'KB'
-    MEGABYTES = 'MB'
-    GIGABYTES = 'GB'
 
-    BYTES_CHOICES = [
-        (KILOBYTES, 'KB'),
-        (MEGABYTES, 'MB'),
-        (GIGABYTES, 'GB'),
-    ]
     size_string = models.CharField(max_length=10, choices=BYTES_CHOICES, default=KILOBYTES)
 
 

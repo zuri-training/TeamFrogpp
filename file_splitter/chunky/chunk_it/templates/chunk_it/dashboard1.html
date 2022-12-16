@@ -19,7 +19,7 @@
    <div class="nav-links">
         <ul>
                 <li><img class="icon" src="{% static 'images/home.svg' %}" alt=""> <a href="">Home</a></li>
-                <li><img id="icon" class="icon" src="{% static 'images/file.svg' %}" alt=""> <a href="">Chunk File</a></li>
+                <li><img id="icon" class="icon" src="{% static 'images/file.svg' %}" alt=""> <a href="{% url 'chunk_it:chunk' %}">Chunk File</a></li>
                 <li><img class="icon" src="{% static 'images/globe.svg' %}" alt=""> <a href="">History</a></li>
                 <li><img class="icon" src="{% static 'images/download.svg' %}" alt=""><a href="">Download</a></li>
                 <li><img class="icon" src="{% static 'images/call.svg' %}" alt=""> <a href="contactus.html">Contact Us</a></li>
@@ -31,7 +31,7 @@
         
         <div class="right">
             <div class="logout">
-            <a href="{% url 'chunk_it:login' %}">Log out</a>
+            <a href="{% url 'logout' %}?next={% url 'chunk_it:landingpg' %}">Log out</a>
             </div>
 
        <div id="blur">                 
@@ -40,11 +40,12 @@
                 
                 <div class="input_file">
          <form onsubmit="return myFunction();" action="{% url 'chunk_it:chunk' %}" method="POST">
+            {% csrf_token %}
                <p>Drag and Drop a File</p>
                         <span>OR</span>
                         <!-- <button>Upload File</button> -->
                     <label id="label" for="Upload">Select a CSV / JSON file</label>
-            <span id="cfile" >   <input type="file" class="button" name="Upload" placeholder="Browse" accept=".csv, .json"/></span>
+            <span id="cfile" >   {{ form.file }}</span>
               </form>
           </div>
 
@@ -52,21 +53,19 @@
                  <p class="info">File must not exceed 1000MB</p>
                 
                 <form onsubmit="return myFunction();" action="{% url 'chunk_it:chunk' %}"  method="POST">
+                    {% csrf_token %}
                     <label class="sizes">Select sizes of chunks</label>
-                    <input type="number" id="sizes" name="sizes" min="1" placeholder="Size" /><br>
+                    {{ form.size_num }}<br>
             <div class="append">     
                     
-        <input type="radio" name="format" value="KB" checked/><label for="KB">KB</label><br>
-        <input type="radio" name="format" value="MB"/><label for="MB">MB</label><br>
-           <input type="radio" name="format" value="GB"/><label for="GB">GB</label><br></div>
+
+                {{ form.size_string}}
                 
           <div class="outputFormat">      <label>
                     Select Output Format</label>
-                    <select >
-                        <option value="Choose Format">Choose Format</option>
-                        <option value="JSON">JSON</option>
-                        <option value="CSV">CSV</option>
-                    </select>
+                    
+
+                    {{ form.file_type}}
               </div>  
   <a class="submit" onclick="popup()">Chunk File</a>
                 
@@ -84,22 +83,34 @@
         
         
         
-      </div>   
+    </div>   
       
-          <div class="downloadpg" id="download">
-        <p id="p" >Here are your chunked files</p>
-        <div class="fileimg">
-          <img src="images/folder.svg" alt="">  
-        </div>
-        
-        <div class="links">
-            <p>Files not downloaded are automatically deleted after 24hours</p>
-            <a href="">Download</a><br>
-            <a href="">Save</a>
-        </div>
-         </div>
-        
-    </div>
+    <div class="downloadpg" id="download">
+  <p id="p" >Here are your chunked files</p>
+  <div class="fileimg">
+    <img src="{% static 'images/folder.svg' %}" alt="">  
+  </div>
+  
+  <div class="links">
+      <p>Files not downloaded are automatically deleted after 24hours</p>
+      <a href="">Download</a><br>
+      <a href="">Save</a>  
+  </div>
+  
+   </div>
+  <div class="footer">
+      <p><a href="{% url 'chunk_it:privacy' %}">Privacy Policy</a></p>     
+     <p>API Developement</p>
+<p>Terms and Services</p>
+
+<div class="copyright">
+  &copy; Zuri Team_Frogpp 2022
+</div>
+
+  </div>
+
+</div>
+
     
         
     

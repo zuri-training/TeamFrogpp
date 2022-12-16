@@ -146,6 +146,7 @@ background-color:rgba(0,0,0,0.1);
     padding-top: 40px;
     padding-bottom: 40px;
     border-radius: 4px;
+    margin-bottom: 20px;
 }
 
 .input_file p{
@@ -240,14 +241,15 @@ input[type='radio']:checked:after {
 /*download page pop-up*/
 .downloadpg{
     position: absolute;
-    height: 50%;
-    top: 30%;
+    height: 70%;
+    width: 80%;
     background-color: white;
-    left: 20%;
-    right: 20%;
     bottom: 30%;
     border-radius: 5px;
     display: none;
+    top:30%;
+    left: 10%;
+    right:10%;
 }
 .downloadpg p{
     margin: 20px;
@@ -257,32 +259,56 @@ input[type='radio']:checked:after {
     display: flex;
     width: 80%;
     margin: auto;
-    padding: 30px 60px;
+    padding:20px 0px ;
     margin-top: 30px;
     justify-content: center;
     align-items: center;
 }
 .fileimg img{
-    width: 50%;
+    width:100px;
 }
 .links p{
     margin-top: 50px;
+    margin-left: 0px;
 }
 .links{
-    margin-left: 10%;
-    margin-right: 5%;
+    width: 100%;
+    margin: auto;
+    width:80%;
 }
 
 .links a{
     text-align: center;
     background: #782c00;
     margin-bottom: 20px;
-    padding-top: 20px;
+    padding: 15px;
+    margin: auto;
     color: white;
     line-height: 50px;
-    width: 80%;
-    margin: auto;
+    font-weight: bold;
     text-decoration: none;
+    border-radius:4px;
+}
+.footer{
+    height: 40px;
+    background-color:#E4D5CC;
+    bottom: 0;
+    margin-bottom: 0;
+    padding-top: 10px;
+    right: 0;
+    z-index: -2;
+    position: fixed;
+    font-size: 12px;
+    padding-top: 3px;
+    display: flex;
+    justify-content: space-around;
+    width: 55%;
+   }
+.copyright{
+    font-size: 10px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 
@@ -295,11 +321,14 @@ input[type='radio']:checked:after {
     .left{
         width:15%;
     }
-    .right{
+    .footer,.right{
         width: 85%;
     }
     .nav-links{
         margin-left:5%;
+    }
+    .footer{
+        font-size: 15px;
     }
 }
 
@@ -307,12 +336,19 @@ input[type='radio']:checked:after {
     .left{
         width:30%;
     }
-    .right{
+   .footer, .right{
         width: 70%;
     }
     .nav-links{
         margin-left:5%;
       }
+    .downloadpg{
+        height: 70%;
+    }
+    .footer {
+       line-height: 10px;
+       padding-top: 5px;
+   }
 }
 
 @media(max-width:659px){
@@ -320,4 +356,21 @@ input[type='radio']:checked:after {
         padding: 5px;
         margin-left: 0px;
     }
+}
+@media(max-width:650px){
+    .downloadpg{
+        height:650px;
+    }
+    .fileimg img{
+        width: 50px;
+    }
+    .footer{
+       line-height: 10px;
+       padding-top: 5px;
+   }
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }

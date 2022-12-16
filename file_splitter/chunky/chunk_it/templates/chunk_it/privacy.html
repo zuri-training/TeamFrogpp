@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,8 +9,8 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Baskervville&display=swap" rel="stylesheet"></head>
     
-    <link rel="stylesheet" href="privacy.css" />
-    <link rel="shortcut icon" href="images/logo1.png" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/privacy.css' %}" />
+    <link rel="shortcut icon" href="{% static 'images/logo1.png' %}" type="image/png">
   </head>
   
   <body>
@@ -17,34 +18,34 @@
     
     <div class="nav-bar">
           <div class="logo">
-              <img src="images/logo1.svg">
+              <img src="{% static 'images/logo.svg' %}">
               <h2>Chunk-It</h2>
           </div>
           
           <div class="nav-links">
        
             <ul>
-                <li> <a href="">Home</a></li>
+                <li> <a href="{% url 'chunk_it:dashboard'  %}">Home</a></li>
                 <li> <a href="">About</a></li>
                 <li> <a href="">Services</a></li>
-                <li> <a href="">Contacts</a></li>
-                <li> <a id="signup" href="index.html">Sign Up</a></li>
-                <li> <a id="login" href="signin.html">Login</a></li>
+                <li> <a href="{% url 'chunk_it:contact'  %}">Contacts</a></li>
+                <li> <a id="signup" href="{% url 'chunk_it:login'  %}">Sign Up</a></li>
+                <li> <a id="login" href="{% url 'chunk_it:signup'  %}">Login</a></li>
             </ul>
         </div>
     </div>
     
     <div class="hide-sidebar">
-               <img id="menu" src="images/menu1.svg" onclick="sideBar ()">     
+               <img id="menu" src="{% static 'images/menu.svg' %}" onclick="sideBar ()">     
 
         <div id="sidebar" class="side-bar">
             <ul>
                 <li> <a href="">Home</a></li>
                 <li> <a href="">About</a></li>
                 <li> <a href="">Services</a></li>
-                <li> <a href="">Contacts</a></li>
-                <li> <a id="signup" href="index.html">Sign Up</a></li>
-                <li> <a id="login" href="signin.html">Login</a></li>
+                <li> <a href="{% url 'chunk_it:contact'  %}">Contacts</a></li>
+                <li> <a id="signup" href="{% url 'chunk_it:signup'  %}">Sign Up</a></li>
+                <li> <a id="login" href="{% url 'chunk_it:login'  %}">Login</a></li>
             </ul>
         </div>
 </div>
@@ -143,6 +144,6 @@
       </main>
       
     </div>
-    <script src="index.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
   </body>
 </html>

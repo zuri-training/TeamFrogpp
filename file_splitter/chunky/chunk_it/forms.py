@@ -1,17 +1,24 @@
 from django.forms import ModelForm
-from .models import Chunk_file
+from .models import Chunk_file, BYTES_CHOICES
 from django import forms  
 from django.contrib.auth.models import User  
 from django.contrib.auth.forms import UserCreationForm  
 from django.core.exceptions import ValidationError  
 from django.forms.fields import EmailField  
-from django.forms.forms import Form  
+ 
   
 
 class ChunkFileForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ''
+
+        self.fields['size_string'] = forms.CharField(label="File Size", max_length=5, widget=forms.RadioSelect(choices=BYTES_CHOICES))
+
     class Meta:
         model = Chunk_file
-        fields= ('file', 'size_num', 'size_string', 'file_type')
+        fields= ('file', 'size_num',  'size_string','file_type')
+
 
 
 class CustomUserCreationForm(UserCreationForm):  
