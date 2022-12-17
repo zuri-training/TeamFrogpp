@@ -25,7 +25,7 @@ def convert_bytes(filenum, filesize):
 class File_result(models.Model):
     name = models.CharField(max_length=300, default='newFile')
     file = models.FileField(upload_to='files/')
-    user =  models.ForeignKey(User, on_delete=models.CASCADE)
+    user =  models.ForeignKey(User, on_delete=models.CASCADE, default="1")
     created_at = models.DateTimeField(auto_now_add=True)
 
 

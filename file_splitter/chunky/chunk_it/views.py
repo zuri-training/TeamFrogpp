@@ -105,21 +105,28 @@ class ChunkFile( LoginRequiredMixin, View):
         mainform = form.save()
         mainform.user = request.user
         mainform.save()
-        global ID
+
         ID = form.instance.id
 
 
-def download(request):
-        zip_folder = "filesplit.zip"
-        filenames = fileSplitter(ID)
-        response = HttpResponse(request, content_type='application/zip')
-        with zipfile.ZipFile(zip_folder, 'a') as zip_file:
-            for filename in filenames:
-                zip_file.write(filename)
-        response['Content-Disposition'] = 'attachment; filename={}'.format(zip_folder)
-        return response
 
-            
+        # zip_folder = "filesplit.zip"
+        filenames = fileSplitter(ID)
+        print(filenames)
+        
+        # with zipfile.ZipFile(zip_folder, 'w') as zip_file:
+        #     for filename in filenames:
+        #         zip_file.write(filename)
+        #         print('Files added to the Zip')
+        # response = HttpResponse( zip_file, content_type='application/zip')
+        # response['Content-Disposition'] = 'attachment; filename={}'.format(zip_folder)
+        # return response
+        for filename in filenames:
+            zip_file = open(filename, 'r')
+        response = HttpResponse(zip_file, content_type='application/force-download')
+        response['Content-Disposition'] = 'attachment; filename="%s"' % 'foo.zip'
+        return response
+                    
 
 
 

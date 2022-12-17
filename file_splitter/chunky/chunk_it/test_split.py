@@ -69,12 +69,12 @@ def fileSplitter(ID):
     # Passing the newly created file through the model so Django has track of them
     list_ID = []
     while counter != 0 :
-        path = Path('media/fileSplit/{}_{}{}'.format(filename_ext,counter,ext))
+        path = Path('chunk_it/fileSplit/{}_{}{}'.format(filename_ext,counter,ext))
         newObject = File_result.objects.create(name="{}{}{}".format(filename_ext,counter,ext))
         with path.open(mode='rb') as f:
             newObject.file = File(f, name=path.name)
             newObject.save()
-            list_ID.append(newObject.file.path)
+            list_ID.append(newObject.file.name)
             counter -= 1
 
     return list_ID

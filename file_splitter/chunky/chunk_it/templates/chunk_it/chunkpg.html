@@ -39,35 +39,41 @@
             <div class="content">
                 
                 <div class="input_file">
-         <form onsubmit="return myFunction();" action="{% url 'chunk_it:chunk' %}" method="POST">
+         <form enctype="multipart/form-data" action="{% url 'chunk_it:chunk' %}" method="POST">
             {% csrf_token %}
                <p>Drag and Drop a File</p>
                         <span>OR</span>
                         <!-- <button>Upload File</button> -->
                     <label id="label" for="Upload">Select a CSV / JSON file</label>
+                     {{form.file.errors}}
             <span id="cfile" >   {{ form.file }}</span>
-              </form>
+              {% comment %} </form> {% endcomment %}
           </div>
 
           <div class="input_file1">
                  <p class="info">File must not exceed 1000MB</p>
                 
-                <form onsubmit="return myFunction();" action="{% url 'chunk_it:chunk' %}"  method="POST">
-                    {% csrf_token %}
+                {% comment %} <form onsubmit="return myFunction();" action="{% url 'chunk_it:chunk' %}"  method="POST">
+                    {% csrf_token %} {% endcomment %}
                     <label class="sizes">Select sizes of chunks</label>
+                    {{form.size_num.errors}}
                     {{ form.size_num }}<br>
             <div class="append">    <br>
                     
         {% comment %} <input type="radio" name="format" value="KB"/><label for="KB">KB</label><br>
         <input type="radio" name="format" value="MB"/><label for="MB">MB</label><br>
            <input type="radio" name="format" value="GB"/><label for="GB">GB</label><br></div> {% endcomment %}
+           {{form.size_string.errors}}
            {{ form.size_string}}
+        
                 
           <div class="outputFormat">      <label>
+            {{form.file_type.errors}}
+
                     Select Output Format</label>
                     {{ form.file_type}}
               </div>  
-  <a class="submit" onclick="popup()">Chunk File</a>
+              <input type="submit" class="submit" value="Chunk File">
                 
             </form>
 
@@ -90,7 +96,7 @@
         
         <div class="links">
             <p>Files not downloaded are automatically deleted after 24hours</p>
-            <a href="{% url 'chunk_it:download' %}">Download</a><br>
+            <a href="{% url 'chunk_it:chunk' %}">Download</a><br>
             <a href="">Save</a>  
         </div>
         
