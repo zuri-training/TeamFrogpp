@@ -60,5 +60,5 @@ Chunk_Files is an online platform that allows individuals to upload large CSV or
 + Can i change the output file format? Yes, you can specify the output format to either JSON or CSV, other file formats will be available on server updates.
 
 
-# To visit the website click the link below
+### To visit the website click the link below
 https://chunk-it-1.herokuapp.com/
