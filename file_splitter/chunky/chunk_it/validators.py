@@ -1,4 +1,4 @@
-import magic
+
 # from django.utils.deconstruct import deconstructible
 # from django.template.defaultfilters import filesizeformat
 from django.core.exceptions import ValidationError

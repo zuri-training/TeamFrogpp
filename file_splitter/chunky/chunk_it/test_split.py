@@ -6,7 +6,7 @@ import os
 from pathlib import Path
 from django.core.files import File
 # from pprint import pprint
-from pathlib import Path
+
 
 
 def fileSplitter(ID):
