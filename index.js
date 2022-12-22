@@ -44,6 +44,8 @@ var d;
      if (d==1){
             document.getElementById("download").style.display="none";
 document.getElementById("blur").style.filter="blur(0px)";
+document.getElementById("icon").style.borderBottom="2px solid white";
+document.getElementById("dwnld").style.borderBottomStyle="none";
             
    d=0;    
     }
@@ -51,6 +53,8 @@ document.getElementById("blur").style.filter="blur(0px)";
        document.getElementById("download").style.display="block";
 document.getElementById("blur").style.filter="blur(5px)";
 d=1;
+document.getElementById("icon").style.borderBottomStyle="none";
+document.getElementById("dwnld").style.borderBottom="2px solid white";
   }
  }
 

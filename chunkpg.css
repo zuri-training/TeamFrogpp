@@ -65,6 +65,12 @@ body{
 .nav-links ul li a{
     text-decoration: none;
     color: white;
+    cursor: pointer;
+    padding-bottom: 5px;
+}
+
+.nav-links ul li a:hover{
+    border-bottom: 2px solid white;
 }
 
 .nav-links {
@@ -87,13 +93,10 @@ body{
 }
 
 #icon{
-    width: 25px;
-    border-left: 2px solid white;
-    padding-left: 5px;
+    border-bottom: 2px solid white;
 }
+
 /*Log out button*/
-/* .logout{
-    } */
 .logout a{
     text-decoration: none;
     color: white;
@@ -280,14 +283,14 @@ input[type='radio']:checked:after {
 .links a{
     text-align: center;
     background: #782c00;
-    margin-bottom: 20px;
-    padding: 15px;
-    margin: auto;
+    margin-bottom: 15px;
+    padding: 10px 0px;
     color: white;
-    line-height: 50px;
     font-weight: bold;
     text-decoration: none;
     border-radius:4px;
+    display: inline-block;
+    width:100%;
 }
 .footer{
     height: 60px;
@@ -312,7 +315,11 @@ input[type='radio']:checked:after {
 
     
 
-
+a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
 
 
 
@@ -369,7 +376,3 @@ input[type='radio']:checked:after {
    }
 }
 
-a{
-    text-decoration: none;
-    color: black;
-}

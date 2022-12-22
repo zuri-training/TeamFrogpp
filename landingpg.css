@@ -93,6 +93,7 @@ body{
     background-color: #782c00;
     position: absolute;
     padding: 10px;
+    z-index: 2;
     top: 60px;
     right: 10px;
     line-height: 40px;
@@ -105,10 +106,8 @@ body{
     
 }
 .side-bar{
-    display: none;
-    
+    display: none;    
 }
-
 
 #menu{
     position: absolute;
