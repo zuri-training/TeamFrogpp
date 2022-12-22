@@ -96,6 +96,10 @@ body{
     border-bottom: 2px solid white;
 }
 
+/*download icon*/#dicon{
+    margin-right: 6px;
+}
+
 /*Log out button*/
 .logout a{
     text-decoration: none;
@@ -376,3 +380,19 @@ a{
    }
 }
 
+@media(min-width:1100px){
+    .icon{
+        width:27px;
+        top: 1px;
+        position: absolute;
+    }
+    .nav-links ul li a{
+        font-size: 20px;
+        margin-top: 0px;
+        margin-left: 40px;
+    }
+    .nav-links ul li{
+        position: relative;
+        width: 100%;
+    }
+}

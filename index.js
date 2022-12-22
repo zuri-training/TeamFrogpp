@@ -56,6 +56,8 @@ d=1;
 document.getElementById("icon").style.borderBottomStyle="none";
 document.getElementById("dwnld").style.borderBottom="2px solid white";
   }
+  
+  return  false;
  }
 
 function myFunction(){ return false; }
