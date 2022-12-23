@@ -106,6 +106,5 @@ Designers worked collaboratively on designing the interface of the Chunkit webap
 + Can i change the output file format? Yes, you can specify the output format to either JSON or CSV, other file formats will be available on server updates.
 
 ### To visit the website click the link below
-https://chunk-it-1.herokuapp.com/
->>>>>>> b884daf0914aff0f5fb8fba451f99ac2175b00c3
+https://zuri-training.github.io/TeamFrogpp/
 
